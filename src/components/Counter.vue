@@ -1,41 +1,44 @@
 <template>
-	<div class="counter">
-		<button @click="subtract()">-</button>
-		<pre>{{ count }}</pre>
-		<button @click="add()">+</button>
-	</div>
-	<div class="counter-message">
-		<slot />
-	</div>
+  <div class="counter">
+    <a target="_blank" href="https://astro.build/">to-astro</a>
+    <div class="counter-message">
+      <slot />
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import { ref } from 'vue';
 export default {
-	setup() {
-		const count = ref(0);
-		const add = () => (count.value = count.value + 1);
-		const subtract = () => (count.value = count.value - 1);
+  setup() {
+    const count = ref(0);
+    const add = () => (count.value = count.value + 1);
+    const subtract = () => (count.value = count.value - 1);
 
-		return {
-			count,
-			add,
-			subtract,
-		};
-	},
+    return {
+      count,
+      add,
+      subtract,
+    };
+  },
 };
 </script>
 
 <style>
 .counter {
-	display: grid;
-	font-size: 2em;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	margin-top: 2em;
-	place-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
 }
 
 .counter-message {
-	text-align: center;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bolder;
 }
 </style>
