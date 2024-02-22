@@ -5,5 +5,5 @@ import vue from '@astrojs/vue';
 export default defineConfig({
 	// Enable Vue to support Vue components.
 	integrations: [vue()],
-	site: 'https://hongkb24.github.io',
+	site: 'https://weifenghong.github.io',
 });
